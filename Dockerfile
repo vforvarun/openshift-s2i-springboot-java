@@ -39,10 +39,10 @@ RUN (curl -fSL https://www-eu.apache.org/dist/maven/maven-3/3.6.3/binaries/apach
 # Install Gradle 4.4
 ARG GRADLE_VER=6.5.1
 ENV GRADLE_VERSION GRADLE_VER
-RUN curl -fSL https://services.gradle.org/distributions/gradle-6.5.1-bin.zip -o /tmp/gradle-3.6.3-bin.zip && \
-    unzip /tmp/gradle-3.6.3-bin.zip -d /usr/local/ && \
-    rm /tmp/gradle-3.6.3-bin.zip && \
-    mv /usr/local/gradle-3.6.3 /usr/local/gradle && \
+RUN curl -fSL https://services.gradle.org/distributions/gradle-6.5.1-bin.zip -o /tmp/gradle-6.5.1-bin.zip && \
+    unzip /tmp/gradle-6.5.1-bin.zip -d /usr/local/ && \
+    rm /tmp/gradle-6.5.1-bin.zip && \
+    mv /usr/local/gradle-6.5.1 /usr/local/gradle && \
     ln -sf /usr/local/gradle/bin/gradle /usr/local/bin/gradle && \
     mkdir -p $HOME/.gradle && chmod -R a+rwX $HOME/.gradle
 
