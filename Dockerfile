@@ -30,7 +30,7 @@ RUN yum install -y java-1.8.0-openjdk java-1.8.0-openjdk-devel && \
 # Install Maven 3.5.2
 ARG MAVEN_VER=3.6.3
 ENV MAVEN_VERSION MAVEN_VER
-RUN (curl -fSL https://www-eu.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz | \
+RUN (curl -fSL https://www-eu.apache.org/dist/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz | \
     tar -zx -C /usr/local) && \
     mv /usr/local/apache-maven-$MAVEN_VERSION /usr/local/maven && \
     ln -sf /usr/local/maven/bin/mvn /usr/local/bin/mvn && \
@@ -39,7 +39,7 @@ RUN (curl -fSL https://www-eu.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binar
 # Install Gradle 4.4
 ARG GRADLE_VER=6.5.1
 ENV GRADLE_VERSION GRADLE_VER
-RUN curl -fSL https://services.gradle.org/distributions/gradle-$GRADLE_VERSION-bin.zip -o /tmp/gradle-$GRADLE_VERSION-bin.zip && \
+RUN curl -fSL https://services.gradle.org/distributions/gradle-6.5.1-bin.zip -o /tmp/gradle-$GRADLE_VERSION-bin.zip && \
     unzip /tmp/gradle-$GRADLE_VERSION-bin.zip -d /usr/local/ && \
     rm /tmp/gradle-$GRADLE_VERSION-bin.zip && \
     mv /usr/local/gradle-$GRADLE_VERSION /usr/local/gradle && \
